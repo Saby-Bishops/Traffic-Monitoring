@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>stats</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 20px;
+    }
+
+    li {
+      background-color: #fff;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .speed {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Alerts in the last {{ time }} minutes</h1>
+  <ul>
+    <li>you have {{nbr}} alerts in the last {{ time }} minutes</li>
+    {% for todo in todos %}
+    <li> alert : the vehicule with id <b> {{ todo['sessionId'] }} </b> the speed limit with speed <b> {{ todo['speed'] }} </b></li>
+    {% endfor %}
+  </ul>
+  <div class="speed">
+    Average Speed: <b>{{average}}</b> km/h
+  </div>
+
+</body>
+</html>
